@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon index.js",
+    "git:push": "git add . && git commit -am \"Yet another commit\" && git push origin main",
     "start": "node index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.2",
+    "cors": "^2.8.5",
     "express": "^4.16.3",
     "web-push": "^3.3.1"
   }
