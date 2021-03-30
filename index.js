@@ -40,11 +40,11 @@ setTimeout(() => {
   console.log("Ready...");
   const payload = JSON.stringify({ title: "Your Daily Digest", url: "/index.html", body: "Notified From Svelte App!, This is the content of the notification" });
   let subscription = {
-    "endpoint": "https://fcm.googleapis.com/fcm/send/dXAQb75KBsM:APA91bE0-FnRLIQ-oWNxMTOVHhxUBFiaZBCBn5Ai1_pjbeam8az-XwU8MAfLfpK_93z8R7W73rmL_ugXhADYf2JvuMfroDWRZlHuppxAVa1ol5vPdGm1j3P-EIt66YiJmF20i1vr7A0q",
+    "endpoint": "https://fcm.googleapis.com/fcm/send/fhywbvYd4Qg:APA91bG1tS2pqgBdVCb57GW9_Oj4t53TkdLBbxs5axbxUx-RZpoZTsXqySI5IZrpw3RoC-FtFkRB8einBf-WhsWS23xo8s8vThDDxEr9pZY90jvBVJbxV0hcdDMzb9RGE9Rh7GMaWj8Y",
     "expirationTime": null,
     "keys": {
-      "p256dh": "BGO1KfuclSEueipO4UKa-CEJpIvXWQI-HIgaOv7Mg9bxsvq3R9mKVZJupb5nwVV9FBi9VGYKfFnsg1kHgVq-nEc",
-      "auth": "-hnH1xt2FM1Wp_MTrN1yCw"
+      "p256dh": "BEdWT8BzBSpdeSoNK3NvG2m7uY1WL-oaeQYRcFTfXmV06nR93OfhV10C9RTK_HuU4iHWrxhi5IqyGpSgkBE3bFo",
+      "auth": "dGEUCBRC2QRC7BUyEBsQZw"
     }
   }
   webpush.sendNotification(subscription, payload).then(res => console.log("Done!!!")).catch(err => console.log(err));
