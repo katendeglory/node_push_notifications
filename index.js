@@ -22,7 +22,7 @@ webpush.setVapidDetails(
 app.post("/notify-sub", (req, res) => {
   const subscription = req.body;
   res.status(201).json({});
-  const payload = JSON.stringify({ title: "Hey there, this is a cool notification!" });
+  const payload = JSON.stringify({ title: "Your Daily Digest", url: "/index.html", body: "Notified From Svelte App!, This is the content of the notification" });
   webpush
     .sendNotification(subscription, payload)
     .catch(err => console.error(err));
@@ -38,17 +38,17 @@ app.post("/add-sub", (req, res) => {
 //Test
 setTimeout(() => {
   console.log("Ready...");
-  const payload = JSON.stringify({ title: "Hey there, this is a cool notification!" });
+  const payload = JSON.stringify({ title: "Your Daily Digest", url: "/index.html", body: "Notified From Svelte App!, This is the content of the notification" });
   let subscription = {
-    "endpoint": "https://fcm.googleapis.com/fcm/send/dY1AHZ2frzo:APA91bFNa2AgTSjBx_cMUNq2V6E_DHuFGRbIHMQB6mISP0kmXSonxoOusKUFbkDRk_655QzN0GgjWQaSRWUcuQNe15VTV7UOa5KHz5gJ0CTt99k_0RBGMQoEXWbh78L7wrzmTotXEHlW",
+    "endpoint": "https://fcm.googleapis.com/fcm/send/dXAQb75KBsM:APA91bE0-FnRLIQ-oWNxMTOVHhxUBFiaZBCBn5Ai1_pjbeam8az-XwU8MAfLfpK_93z8R7W73rmL_ugXhADYf2JvuMfroDWRZlHuppxAVa1ol5vPdGm1j3P-EIt66YiJmF20i1vr7A0q",
     "expirationTime": null,
     "keys": {
-      "p256dh": "BJDIHNVSmGHO8S8y-qn3elqs_RQvjZK_3L3W9DupL8vsQaqQlkQbM8kWGMnwX9-UeBXxW1ebvSYh4ZijRgS_BSk",
-      "auth": "A-gXvVz32RVYOYAEB_4UkA"
+      "p256dh": "BGO1KfuclSEueipO4UKa-CEJpIvXWQI-HIgaOv7Mg9bxsvq3R9mKVZJupb5nwVV9FBi9VGYKfFnsg1kHgVq-nEc",
+      "auth": "-hnH1xt2FM1Wp_MTrN1yCw"
     }
   }
   webpush.sendNotification(subscription, payload).then(res => console.log("Done!!!")).catch(err => console.log(err));
-}, 10000);
+}, 2500);
 //Test
 
 /* ----------------------- 👆 PUSH NOTIFICATIONS AREAS 👆 ----------------------- */
